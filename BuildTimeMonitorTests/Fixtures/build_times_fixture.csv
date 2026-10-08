@@ -1,0 +1,7 @@
+started_at,completed_at,duration_seconds,build_kind,status,artifact_updated,scheme,configuration,sdk,project,user,hostname,hardware_model,cpu_count,xcode_version,git_branch,git_commit
+"2026-10-07T09:00:00+0100","2026-10-07T09:04:10+0100","250","full","succeeded","yes","MyApp","Debug","iphonesimulator26.0","MyApp","dan","studio","Mac15,6","12","2600","main","abc1234"
+"2026-10-07T09:10:00+0100","2026-10-07T09:10:20+0100","20","incremental","succeeded","yes","MyApp","Debug","iphonesimulator26.0","MyApp","dan","studio","Mac15,6","12","2600","feature/a, b","def5678"
+"2026-10-07T09:15:00+0100","","","incremental","failed-or-cancelled","","MyApp","Debug","iphonesimulator26.0","MyApp","dan","studio","Mac15,6","12","2600","main","def5678"
+"2026-10-07T09:20:00+0100","2026-10-07T09:20:02+0100","2","incremental","succeeded","no","MyApp","Debug","iphonesimulator26.0","MyApp","dan","studio","Mac15,6","12","2600","say ""hi""","def5678"
+"2026-10-07T10:00:00+0000","2026-10-07T10:00:30+0000","30","incremental","succeeded","yes","Widgets","Release","macosx26.0","OtherApp","dan","studio","Mac15,6","12","2610","main","0000001"
+"not-a-date","","","full","succeeded","","X","","","Broken","","","","","","",""

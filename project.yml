@@ -1,0 +1,56 @@
+name: BuildTimeMonitor
+options:
+  bundleIdPrefix: uk.co.otaku-dev
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MACOSX_DEPLOYMENT_TARGET: "26.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  BuildTimeMonitor:
+    type: application
+    platform: macOS
+    sources:
+      - BuildTimeMonitor
+    info:
+      path: BuildTimeMonitor/Resources/Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleDisplayName: Build Time Monitor
+        LSApplicationCategoryType: public.app-category.developer-tools
+        NSHumanReadableCopyright: ""
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: uk.co.otaku-dev.BuildTimeMonitor
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "-"
+        ENABLE_APP_SANDBOX: NO
+        GENERATE_INFOPLIST_FILE: NO
+  BuildTimeMonitorTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - BuildTimeMonitorTests
+    dependencies:
+      - target: BuildTimeMonitor
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: uk.co.otaku-dev.BuildTimeMonitorTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/BuildTimeMonitor.app/Contents/MacOS/BuildTimeMonitor"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  BuildTimeMonitor:
+    build:
+      targets:
+        BuildTimeMonitor: all
+        BuildTimeMonitorTests: [test]
+    test:
+      targets:
+        - BuildTimeMonitorTests
